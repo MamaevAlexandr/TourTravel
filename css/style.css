@@ -1,0 +1,124 @@
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1415px;
+}
+.header {
+    position: sticky;
+    top:0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 35px 0;
+}
+.header__logo{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+.head__nav{
+    width: 50%;
+    display: flex;
+    color: #B8BECD;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin: 0 0 0 25px;
+    padding: 0 0 0 200px;
+}
+.head__nav a {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;   
+    color: #B8BECD;
+    
+}
+.head__nav a:hover{
+    cursor: pointer;
+    color:black;
+}
+
+.head__form{
+    display: flex;
+    align-items: center;
+}
+.head__nav-login {
+    width: 132px;
+    height: 44px;
+    border: 1px solid #FB8F1D;
+    border-radius: 8px;
+    margin: 0 20px 0 0;
+}
+.nav__head-btm {
+    width: 132px;
+    height: 44px;
+    background: #FB8F1D;
+    border-radius: 8px;
+    color: white;
+}
+
+
+/*============== Adaptiv ===================================*/
+
+@media (max-width:1235px){
+    .head__form {
+        display: flex;
+        flex-direction: column;
+    }
+    .head__form button{
+        margin: 10px 0 0 -15px;
+    }
+}
+
+@media (max-width:960px) {
+    .head__nav {
+        display: flex;
+        flex-direction: column;
+    }
+    .head__nav a {
+        padding: 10px 0 0 0;
+    }
+}
+
+@media (max-width:768px) {
+        .header {
+            height: 60px;
+            margin-top: 48px;
+        }
+        .head__nav {
+            display: none;
+        }
+        .head__form {
+            display: none;
+        }
+        /* Burger-menu*/
+        .burger__menu{
+            position:relative;/* относительное позицианирование*/
+            width: 40px;/*Размеры блока*/
+            height: 35px;
+            display: block;
+            margin-left: 10px;
+        }
+        .burger__menu span, .burger__menu::after, .burger__menu::before{
+            height: 3px;
+            width: 100%;
+            position: absolute;
+            background: #515758;
+            margin: 0 auto;
+        }
+        .burger__menu span {
+            top:21px;
+        }
+        .burger__menu::after, .burger__menu::before {
+            content: '';
+        }
+        .burger__menu::after {
+            bottom: 5px;
+        }
+        .burger__menu::before{
+            top: 14px;
+        }
+        /*==============================*/
+    }
