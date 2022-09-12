@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
     <title>Travel and Tour</title>
-    <meta utf="8">
-    <meta lang="eu">
-    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./css/normalized.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    </head>
-    <body>
+    <!--  <meta charset="utf-8" />  -->
+    <meta utf="8" />
+    <!-- Зачем тебе такой язык? и lang можно указывать в теге <html> -->
+    <meta lang="eu" />
+    <link rel="shortcut icon" href="./img/logo.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/normalized.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Не надо подключать все начертания шрифтов если ты их не используешь, страница будт дольше грузиться -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            
-            <div class="burger__menu">
-                <span></span>
-            </div>
+      <!-- Header -->
+      <header class="header">
+        <!-- бургер меню должно быть кнопкой -->
+        <div class="burger__menu">
+          <span></span>
+        </div>
 
-            <div class="header__logo">
-            <a href="#"><img src="img/logo.svg"></a>
-            </div>
-            
-                <nav class="head__nav">
-                    <a href="#">Home</a>
-                    <a href="#">Destinations</a>
-                    <a href="#">About</a>
-                    <a href="#">Partner</a>
-                </nav>
-            
-            <div class="head__form">
-                <input class="head__nav-login" type="form">
-                <button class="nav__head-btm">Register</button>
-            </div>
-        </header>
+        <div class="header__logo">
+          <!-- Нет alt у картинки -->
+          <a href="#"><img src="img/logo.svg" /></a>
+        </div>
+
+        <nav class="head__nav">
+          <!-- Должен быть список -->
+          <a href="#">Home</a>
+          <a href="#">Destinations</a>
+          <a href="#">About</a>
+          <a href="#">Partner</a>
+        </nav>
+
+        <div class="head__form">
+          <!-- По макету это кнопка а не поле ввода -->
+          <input class="head__nav-login" type="form" />
+          <!-- кнопкам надо добавлять аттрибут type, в данном случае type="button" -->
+          <button class="nav__head-btm">Register</button>
+        </div>
+      </header>
     </div>
-    </body>
-    <footer></footer>
+  </body>
+  <!-- :) верни футер на место-->
+  <footer></footer>
 </html>
+
+<!-- Поставь себе уже prettier в конце то концов)) -->
