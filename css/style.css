@@ -1,137 +1,148 @@
-body {
-  font-family: Mulish, Arial, sans-serif;
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-a {
-  color: inherit;
-}
-
-.f-inter {
-  font-family: Inter, Helvetica, sans-serif;
-}
-
-.f-heading {
-  font-family: "Playfair Display", "Times New Roman", serif;
-}
-
-.btn {
-  background: #fb8f1d;
-  border: none;
-  padding: 0;
-  color: #fff;
-  font-size: 15px;
-  width: 100%;
-  border-radius: 8px;
-  transition: background 0.2s ease-out;
-}
-
-.btn:hover {
-  background: #f38209;
-}
-
-.btn_bordered {
-  background: transparent;
-  border: 1px solid #fb8f1d;
-  color: #fb8f1d;
-}
-
-.btn_bordered:hover {
-  color: #fff;
-}
+/* Нет глобальных обьявлений шрифтов */
 
 .container {
   margin: 0 auto;
   width: 100%;
-  padding: 0 20px;
-  max-width: 1260px;
+  /* Неверная ширина контейнера, должно быть 1220 */
+  max-width: 1415px;
 }
 .header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  /* Не используй такие z-index, если на странице будет несколько элементов с z-index то будет сложно подгонять. Начинай с маленьких чисел */
+  z-index: 100;
   display: flex;
-  justify-content: space-between;
+  /* space-around здесь не подойдет, тебе не нужно неконтролируемое место по бокам, используй space-between */
+  justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
   padding: 35px 0;
 }
-
-.header__right {
+/* Из-за того что ты центрируешь логотип кажется что страница смещается вправо */
+.header__logo {
+  width: 25%;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
-
-.header__nav-list {
+.head__nav {
+  width: 50%;
   display: flex;
   color: #b8becd;
   justify-content: space-around;
+  align-items: flex-end;
+  margin: 0 0 0 25px;
+  /* Большой padding слева, трудно будет адаптировать, или используй проценты или ограничь ширину блока */
+  padding: 0 0 0 200px;
 }
 
-.header__nav-list li {
-  margin-right: 34px;
-}
-
-.burger__menu {
-  display: none;
-}
-
-.header__nav-list a {
+.head__nav a {
+  font-family: "Inter";
+  font-size: 16px;
   font-weight: 500;
-  line-height: 1.2;
+  /* line-height: 19px/16px = 1.2. Относительные значения */
+  line-height: 19px;
   color: #b8becd;
-  transition: color 0.2s ease-out;
-  cursor: pointer;
 }
-.header__nav-list a:hover {
-  color: #202336;
+.head__nav a:hover {
+  /* Добавь какой нибудь transition для красоты */
+  cursor: pointer;
+  color: black;
 }
 
-.header__form {
+.head__form {
   display: flex;
   align-items: center;
 }
-
-.header__btn {
+.head__nav-login {
   width: 132px;
   height: 44px;
-  flex-shrink: 0;
+  border: 1px solid #fb8f1d;
+  border-radius: 8px;
+  margin: 0 20px 0 0;
 }
-
-.header__btn:first-child {
-  margin-right: 18px;
+.nav__head-btm {
+  width: 132px;
+  height: 44px;
+  background: #fb8f1d;
+  border-radius: 8px;
+  color: white;
 }
 
 /*============== Adaptiv ===================================*/
 
-@media (max-width: 768px) {
-  .header {
-    padding: 24px 0;
-  }
-  .header__right {
-    display: none;
-  }
-
-  /* Burger-menu*/
-  .burger__menu {
-    width: 40px;
-    height: 35px;
+@media (max-width: 1235px) {
+  .head__form {
+    /* Если ты задал свойство в обычных стилях то его можно не прописывать в адаптиве, если его значение не изменилось */
     display: flex;
+    /* Рано кнопки в колонку выстраивать на этом разрешении */
     flex-direction: column;
-    justify-content: space-between;
-    background: none;
-    border: none;
-    padding: 0;
   }
-  .burger__menu span {
-    height: 3px;
-    width: 100%;
-    background: #515758;
+  /* Для button у тебя есть класс в разметке*/
+  .head__form button {
+    /* Отрицательный margin здесь не нужен, кнопка смещается из-за того что ее смещает предыдущий элемент */
+    margin: 10px 0 0 -15px;
   }
 }
+
+@media (max-width: 960px) {
+  .head__nav {
+    /* Так на адаптиве не делают со ссылками. Если не влезают - уменьшай отступы, шрифт, или скрывай и выноси их в мобильное меню */
+    display: flex;
+    flex-direction: column;
+  }
+  .head__nav a {
+    /* padding: 10px 0 0 */
+    padding: 10px 0 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+    margin-top: 48px;
+    /* не уменьшил padding на мобиле, хедер высотой 60px а отступов на 70px */
+  }
+  .head__nav {
+    display: none;
+  }
+  .head__form {
+    /* можно обьединить селекторы */
+    display: none;
+  }
+  /* Burger-menu*/
+  .burger__menu {
+    position: relative; /* относительное позицианирование*/
+    width: 40px; /*Размеры блока*/
+    height: 35px;
+    display: block;
+    margin-left: 10px;
+  }
+  .burger__menu span,
+  .burger__menu::after,
+  .burger__menu::before {
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background: #515758;
+    margin: 0 auto;
+  }
+  .burger__menu span {
+    top: 21px;
+  }
+  .burger__menu::after,
+  .burger__menu::before {
+    content: "";
+  }
+  .burger__menu::after {
+    bottom: 5px;
+  }
+  .burger__menu::before {
+    top: 14px;
+  }
+  /*==============================*/
+}
+
+/* шапка на адаптиве начинает прилипать к бокам */
+/* бургер должен быть скрыт на десктопе через display:none */
+/* Слишком большие поля на мобильной версии */
+/* разные отступы у before и after у бургера, выглядит неровно */
