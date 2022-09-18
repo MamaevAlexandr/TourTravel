@@ -15,8 +15,9 @@
   /* space-around здесь не подойдет, тебе не нужно неконтролируемое место по бокам, используй space-between */
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  
   padding: 35px 0;
+  max-width: 1235px;
 }
 /* Из-за того что ты центрируешь логотип кажется что страница смещается вправо */
 .header__logo {
@@ -72,6 +73,16 @@
   border-radius: 8px;
   color: white;
 }
+.travel__form{
+  display: flex;
+  max-width: 1200px;
+}
+.travel__all-form{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
 .travel__form-1 {
   display: flex;
   max-width: 356px;
@@ -92,8 +103,24 @@
   border: 1px solid #202336;
   max-width: 32px;
 }
-
-
+.travel__form-grid {
+  display:grid;
+  border: 1px solid red;
+  max-width: 50%;
+  grid-template-columns: 20% 20%;
+  grid-template-rows: 20% 20%;
+}
+.travel__form-grid ol {
+  width: 220px;
+  height: 52px;
+  border: 1px solid red;
+}
+.travel__form-pplimg{
+  max-width: 600px;
+  object-fit: cover;
+  position: absolute;
+  right: 18%;
+}
 
 
 
@@ -105,24 +132,26 @@
 /*============== Adaptiv ===================================*/
 
 @media (max-width: 1235px) {
-  .head__form {
-    /* Если ты задал свойство в обычных стилях то его можно не прописывать в адаптиве, если его значение не изменилось */
-    display: flex;
-    /* Рано кнопки в колонку выстраивать на этом разрешении */
-    flex-direction: column;
+  .header__logo{
+    margin: 0 -30px 0 0;
+  }
   }
   /* Для button у тебя есть класс в разметке*/
   .head__form button {
     /* Отрицательный margin здесь не нужен, кнопка смещается из-за того что ее смещает предыдущий элемент */
-    margin: 10px 0 0 -15px;
+    margin: 0px 0 0 10px;
   }
-}
+
 
 @media (max-width: 960px) {
-  .head__nav {
+  .head__nav, .head__form {
     /* Так на адаптиве не делают со ссылками. Если не влезают - уменьшай отступы, шрифт, или скрывай и выноси их в мобильное меню */
     display: flex;
     flex-direction: column;
+    padding: 0 20px 0 0;
+  }
+  .head__form button{
+    margin: 10px 0 0 0;
   }
   .head__nav a {
     /* padding: 10px 0 0 */
