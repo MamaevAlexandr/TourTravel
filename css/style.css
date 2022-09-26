@@ -76,6 +76,7 @@
 .travel__form{
   display: flex;
   max-width: 1200px;
+  margin: 80px 0 0 0;
 }
 .travel__all-form{
   display: flex;
@@ -92,6 +93,12 @@
   font-size: 64px;
   color:#202336;
 }
+.travel__form-svgtop {
+  position: absolute;
+  top: 20%;
+  left:42%;
+  
+}
 .travel__form-txt {
   font-family: 'Inter';
   font-weight: 600;
@@ -102,24 +109,53 @@
   display: block;
   border: 1px solid #202336;
   max-width: 32px;
+  margin: -65px 0 0 0;
+}
+.travel__form-svgleft{
+  position: absolute;
+  top: 55%;
+  left: 80px;
 }
 .travel__form-grid {
-  display:grid;
-  border: 1px solid red;
+  display:inline-grid;
   max-width: 50%;
-  grid-template-columns: 20% 20%;
-  grid-template-rows: 20% 20%;
+  grid-template-columns: 220px 220px;
+  grid-template-rows: 35px;
+  grid-gap: 35px 30px;
 }
 .travel__form-grid ol {
   width: 220px;
   height: 52px;
+  text-align: center;
+  font-family: 'Inter';
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 32px;
   border: 1px solid red;
+}
+.travel__form-explr{
+  width: 180px;
+  height: 50px;
+  background: #FB8F1D;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Mulish';
+
+}
+.travel__form-explr:hover {
+  background: yellow;
+  color:black;
+  transition-duration: 1s;
+}
+.travel__form-svgbottom {
+  position: absolute;
+  top: 90% ;
+  left: 46%;
 }
 .travel__form-pplimg{
   max-width: 600px;
   object-fit: cover;
-  position: absolute;
-  right: 18%;
+  margin: 0 0 0 10%;
 }
 
 
