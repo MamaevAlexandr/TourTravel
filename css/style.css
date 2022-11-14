@@ -12,12 +12,11 @@ body {
   position: sticky;
   top: 0;
   /* Не используй такие z-index, если на странице будет несколько элементов с z-index то будет сложно подгонять. Начинай с маленьких чисел */
-  z-index: 3;
+  z-index: 1;
   display: flex;
   /* space-around здесь не подойдет, тебе не нужно неконтролируемое место по бокам, используй space-between */
   justify-content: space-between;
   align-items: center;
-  
   padding: 35px 0;
   max-width: 1235px;
 }
@@ -36,6 +35,12 @@ body {
   margin: 0 0 0 20px;
   /* Большой padding слева, трудно будет адаптировать, или используй проценты или ограничь ширину блока */
   padding: 0 0 0 20%;
+}
+
+.head__nav-spisok {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .head__nav a {
@@ -219,6 +224,111 @@ body {
   cursor: pointer;
 }
 
+.destinations {
+  width: 100%;
+  height: 33.125rem;
+  margin: 16.375rem 0 0 0;
+}
+.destinations__top-svg{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 141px;
+}
+.destinations__info{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.destinations__info-txt{
+  font-family: 'Playfair Display';/*Добавить шрифт в проэкт*/
+  font-weight: 700;
+  font-size: 36px;
+  width: 30.0625rem;
+  height: 3.125rem;
+}
+.destinations__info-rightOrange{
+  width: 79px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.destinations__info-view{
+  width: 4rem;
+  height: 3.75rem;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 3.75rem;
+  color: rgba(251, 143, 29, 1);
+}
+.destinations__info-view:hover{
+  color:rgb(10, 10, 10);
+  transition-duration: 1s;
+}
+.destinations__info-view-arrow {
+  margin: 23px 0 0 0;
+}
+
+.destinations__info-svgCenter{
+  position: absolute;
+  margin: 10.0625rem 0 0 -5.75rem;
+  transform: rotate(7.49deg);
+}
+
+.destinations__card {
+  width: 100%;
+  height: 21.0625rem;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+.destinations__card-raja{
+  width: 16.3125rem;
+  height: 21.0625rem;
+  
+}
+.destinations__card-rajaFoto{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.destinations__card-raja-info {
+  width: 7.5rem;
+  height: 56px;
+  background-color:rgba(255, 255, 255, 1);
+  border-radius: 0px 6px 0px 0px;
+  position:absolute;
+  margin:-3.4375rem 0 0 0;
+  
+}
+.destinations__card-allHeader {
+  font-family: 'Inter';
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 25px;
+  color:rgba(4, 37, 33, 1);
+}
+.destinations__card-allTxt {
+  font-family: 'Inter';
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 25px;
+  color: rgba(128, 145, 142, 1);
+}
+
+
+
+
+
+
+
+
+.footer {
+  width: 100%;
+  height: 30.125rem;
+  border: 1px solid red;
+  margin: 100px 0;
+}
 
 /*============== Adaptiv ===================================*/
 @media (max-width:1450px){
@@ -242,7 +352,9 @@ body {
   .travel__form-pplimg{
     margin: 0 0 0 0;
   }
-
+.test{
+  color:black;
+}
 
 @media (max-width: 960px) {
   .head__nav, .head__form {
