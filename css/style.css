@@ -278,7 +278,6 @@ body {
 .destinations__card {
   width: 100%;
   height: 21.0625rem;
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
 }
@@ -316,6 +315,12 @@ body {
   color: rgba(128, 145, 142, 1);
 }
 
+.destinations__svg-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 85px 0 0;
+}
 
 
 
