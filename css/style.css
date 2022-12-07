@@ -322,8 +322,60 @@ body {
   margin: 40px 85px 0 0;
 }
 
-
-
+/*======================== GUIDES ==================*/
+.guides {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14.375rem;
+}
+.guides__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.guides__left-topimg {
+  padding: 0 0 0 2.8125rem;
+}
+.guides__left-title {
+  font-family: 'Playfair Display';
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: -10.625rem 0 0 0;
+}
+.guides__left-txt {
+  font-family: 'Mulish';
+  font-size: 1.0625rem;
+  font-weight: 300;
+  max-width: 28.125rem;
+  color: rgba(125, 121, 135, 1);
+  margin: -11.875rem 0 0 0;
+}
+.guides__left-btm {
+  width: 100%;
+  max-width: 10.25rem;
+  height: 3rem;
+  color:rgba(255, 255, 255, 1);
+  background: rgba(251, 143, 29, 1);
+  border-radius: 8px;
+  margin: -11.25rem 0 0 0;
+}
+.guides__left-btm:hover {
+  background: yellow;
+  color: black;
+  transition-duration: 1s;
+}
+.guides__left-imgBottom{
+  transform: rotate(20.42deg);
+  position: absolute;
+  margin: 160px 0 5.625rem 28rem;
+}
+.guides__right-imgRightTop{
+  position: absolute;
+  margin: 35px 0 0 0;
+  transform: rotate(9.99deg);
+  right: 15%;
+}
 
 
 
